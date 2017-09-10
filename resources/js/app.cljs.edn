@@ -1,0 +1,2 @@
+{:require  [re.app]
+ :init-fns [re.app/init]}
