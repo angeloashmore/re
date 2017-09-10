@@ -8,7 +8,7 @@
                     [weasel                      "0.7.0"  :scope "test"]
                     [adzerk/boot-cljs            "2.1.3"  :scope "test"]
                     [adzerk/boot-cljs-repl       "0.3.3"  :scope "test"]
-                    [adzerk/boot-reload          "0.5.1"  :scope "test"]
+                    [adzerk/boot-reload          "0.5.2"  :scope "test"]
                     [pandeiro/boot-http          "0.8.3"  :scope "test"]
                     [binaryage/devtools          "0.9.4"  :scope "test"]
                     [reagent                     "0.8.0-alpha1"]
@@ -17,8 +17,7 @@
                     [day8.re-frame/async-flow-fx "0.0.8"]
                     [day8.re-frame/http-fx       "0.1.4"]
                     [bidi                        "2.1.2"]
-                    [kibu/pushy                  "0.3.8"]
-                    [cljs-css-modules            "0.2.1"]])
+                    [kibu/pushy                  "0.3.8"]])
 
 (require
   '[adzerk.boot-cljs      :refer [cljs]]
@@ -51,7 +50,8 @@
 (deftask development
   []
   (task-options! cljs {:optimizations :none
-                       :closure-defines {'re.config/dev? true}}
+                       :closure-defines {'re.config/dev? true}
+                       :source-map true}
                  reload {:on-jsload 're.app/init})
   identity)
 

@@ -2,4 +2,7 @@
 
 (defn main
   []
-  [:div [:a {:href "/about"} "Go to /about"]])
+  [:div
+   [:p
+    [:a {:href "/about"} "Go to /about"]]
+   [:p "Or stay here! I don't care."]])
