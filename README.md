@@ -20,4 +20,4 @@ or
 boot build
 ```
 
-[boot][http://boot-clj.com/]
+[boot]: http://boot-clj.com/
