@@ -17,7 +17,8 @@
                     [day8.re-frame/async-flow-fx "0.0.8"]
                     [day8.re-frame/http-fx       "0.1.4"]
                     [bidi                        "2.1.2"]
-                    [kibu/pushy                  "0.3.8"]])
+                    [kibu/pushy                  "0.3.8"]
+                    [garden                      "1.3.2"]])
 
 (require
   '[adzerk.boot-cljs      :refer [cljs]]
@@ -49,9 +50,9 @@
 
 (deftask development
   []
-  (task-options! cljs {:optimizations :none
-                       :closure-defines {'re.config/dev? true}
-                       :source-map true}
+  (task-options! cljs {:compiler-options {:optimizations :none
+                                          :closure-defines {'re.config/dev? true}
+                                          :source-map true}}
                  reload {:on-jsload 're.app/init})
   identity)
 

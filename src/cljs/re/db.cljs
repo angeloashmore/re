@@ -1,8 +1,11 @@
 (ns re.db)
 
 (def default-db
-  {;; Status
+  {;; status
    :failed false
    
-   ;; Routing
-   :active-panel :home-panel})
+   ;; routing
+   :active-panel :home-panel
+   
+   ;; subreddit
+   :subreddit "all"})
