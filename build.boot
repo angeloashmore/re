@@ -1,30 +1,32 @@
 (set-env!
   :source-paths   #{"src/cljs"}
   :resource-paths #{"resources"}
-  :dependencies   '[[org.clojure/clojure         "1.8.0"]
-                    [org.clojure/clojurescript   "1.9.908"]
-                    [org.clojure/tools.nrepl     "0.2.13" :scope "test"]
-                    [com.cemerick/piggieback     "0.2.2"  :scope "test"]
-                    [weasel                      "0.7.0"  :scope "test"]
-                    [adzerk/boot-cljs            "2.1.3"  :scope "test"]
-                    [adzerk/boot-cljs-repl       "0.3.3"  :scope "test"]
-                    [adzerk/boot-reload          "0.5.2"  :scope "test"]
-                    [pandeiro/boot-http          "0.8.3"  :scope "test"]
-                    [binaryage/devtools          "0.9.4"  :scope "test"]
-                    [reagent                     "0.8.0-alpha1"]
-                    [reagent-utils               "0.2.1"]
-                    [re-frame                    "0.10.1"]
-                    [day8.re-frame/async-flow-fx "0.0.8"]
-                    [day8.re-frame/http-fx       "0.1.4"]
-                    [bidi                        "2.1.2"]
-                    [kibu/pushy                  "0.3.8"]
-                    [garden                      "1.3.2"]])
+  :dependencies   '[[org.clojure/clojure           "1.8.0"]
+                    [org.clojure/clojurescript     "1.9.908"]
+                    [org.clojure/tools.nrepl       "0.2.13" :scope "test"]
+                    [com.cemerick/piggieback       "0.2.2"  :scope "test"]
+                    [weasel                        "0.7.0"  :scope "test"]
+                    [adzerk/boot-cljs              "2.1.3"  :scope "test"]
+                    [adzerk/boot-cljs-repl         "0.3.3"  :scope "test"]
+                    [adzerk/boot-reload            "0.5.2"  :scope "test"]
+                    [pandeiro/boot-http            "0.8.3"  :scope "test"]
+                    [binaryage/devtools            "0.9.4"  :scope "test"]
+                    [powerlaces/boot-cljs-devtools "0.2.0"  :scope "test"]
+                    [reagent                       "0.8.0-alpha1"]
+                    [reagent-utils                 "0.2.1"]
+                    [re-frame                      "0.10.1"]
+                    [day8.re-frame/async-flow-fx   "0.0.8"]
+                    [day8.re-frame/http-fx         "0.1.4"]
+                    [bidi                          "2.1.2"]
+                    [venantius/accountant          "0.2.0"]
+                    [garden                        "1.3.2"]])
 
 (require
-  '[adzerk.boot-cljs      :refer [cljs]]
-  '[adzerk.boot-cljs-repl :refer [cljs-repl start-repl]]
-  '[adzerk.boot-reload    :refer [reload]]
-  '[pandeiro.boot-http    :refer [serve]])
+  '[adzerk.boot-cljs              :refer [cljs]]
+  '[adzerk.boot-cljs-repl         :refer [cljs-repl start-repl]]
+  '[adzerk.boot-reload            :refer [reload]]
+  '[pandeiro.boot-http            :refer [serve]]
+  '[powerlaces.boot-cljs-devtools :refer [cljs-devtools]])
 
 (deftask build
   "This task contains all the necessary steps to produce a build."
@@ -39,6 +41,7 @@
   []
   (comp (serve)
         (watch)
+        (cljs-devtools)
         (cljs-repl)
         (reload)
         (build)))

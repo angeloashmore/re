@@ -21,7 +21,7 @@
 
 (defn init
   []
-  (routes/app-routes)
-  ; (re-frame/dispatch-sync [:boot])
+  (routes/start)
+  (re-frame/dispatch-sync [:boot])
   (dev-setup)
   (mount-root))

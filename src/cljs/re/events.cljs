@@ -1,5 +1,12 @@
 (ns re.events
-  (:require [re-frame.core :as re-frame :refer [reg-event-db]]))
+  (:require [re-frame.core :as re-frame :refer [reg-event-db]]
+            [re.db :refer [default-db]]))
+
+;; -- boot
+(reg-event-db
+  :boot
+  (fn [_ _]
+    default-db))
 
 ;; -- status
 

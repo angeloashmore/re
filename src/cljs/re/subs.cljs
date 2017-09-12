@@ -1,5 +1,5 @@
 (ns re.subs
-  (:require [re-frame.core :as re-frame :refer [reg-sub]]))
+  (:require [re-frame.core :refer [reg-sub]]))
 
 ;; -- status
 
