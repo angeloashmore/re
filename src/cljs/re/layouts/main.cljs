@@ -9,6 +9,6 @@
    {:style {:-webkit-font-smoothing "antialiased"}}
    [:div#top]
    [header/main]
-   [:main.ph3.mw8.center
+   [:main.mw7.center
     (map-indexed #(with-meta %2 {:key %1}) children)]
    [footer/main]])

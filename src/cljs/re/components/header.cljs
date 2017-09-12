@@ -23,6 +23,6 @@
 (defn main
   []
   [:header.bb.b--black-05
-   [:div.mw8.center.flex
+   [:div.mw7.center.flex
     [logo]
     [search]]])
