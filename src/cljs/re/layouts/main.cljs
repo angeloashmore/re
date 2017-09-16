@@ -5,7 +5,7 @@
 
 (defn main
   [& children]
-  [:div.sans-serif.black.nested-links
+  [:div.sans-serif.black
    {:style {:-webkit-font-smoothing "antialiased"}}
    [:div#top]
    [header/main]

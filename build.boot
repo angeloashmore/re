@@ -19,7 +19,8 @@
                     [day8.re-frame/http-fx         "0.1.4"]
                     [bidi                          "2.1.2"]
                     [venantius/accountant          "0.2.0"]
-                    [garden                        "1.3.2"]])
+                    [garden                        "1.3.2"]
+                    [lambdaisland/uri              "1.1.0"]])
 
 (require
   '[adzerk.boot-cljs              :refer [cljs]]

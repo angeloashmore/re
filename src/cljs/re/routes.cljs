@@ -1,11 +1,16 @@
 (ns re.routes
   (:require [bidi.bidi :as bidi]
+            [bidi.verbose :refer [branch param leaf]]
             [accountant.core :as accountant]
             [re-frame.core :as re-frame]))
 
 (def routes
-  ["/" {""      :home
-        "about" :about}])
+  ["/" {"" :home
+        "r/" {""               :subreddits
+              [:subreddit "/"] {""    :subreddit
+                                [:id] :post}}}])
+
+(def url-for (partial bidi/path-for routes))
 
 (defn nav-handler
   [path]

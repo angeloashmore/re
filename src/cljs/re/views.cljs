@@ -1,11 +1,11 @@
 (ns re.views
   (:require [re-frame.core :as re-frame]
             [re.panels.home :as home]
-            [re.panels.about :as about]))
+            [re.panels.post :as post]))
 
 (defmulti panels identity)
 (defmethod panels :home-panel [] [home/main])
-(defmethod panels :about-panel [] [about/main])
+(defmethod panels :post-panel [] [post/main])
 (defmethod panels :default [] [:div])
 
 (defn main-panel
